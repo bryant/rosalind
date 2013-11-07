@@ -1,4 +1,4 @@
 rosalind
 ========
 
-haskell solutions to rosalind.info/problems/ .
+haskell solutions to the problem sets at [rosalind](http://rosalind.info/problems/).
