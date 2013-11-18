@@ -1,0 +1,1 @@
+inod = subtract 2
