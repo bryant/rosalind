@@ -1,6 +1,6 @@
-module Common (multiFasta) where
+module Common (Fasta(..), parseMultiFasta) where
 
-import Text.Parsec (Parsec, many, many1, noneOf, char, newline)
+import Text.Parsec (Parsec, parse, many, many1, noneOf, char, newline)
 import Control.Applicative ((<$>), (<*), (<*>), (*>))
 
 data Fasta = Fasta String String deriving Show
@@ -15,3 +15,5 @@ seqLines = concat <$> many1 seqLine
 headerLine = char '>' *> many (noneOf "\n") <* newline
 
 seqLine = (:) <$> noneOf ">" <*> many (noneOf "\n") <* newline
+
+parseMultiFasta = parse multiFasta "multifasta"
